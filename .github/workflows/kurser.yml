@@ -1,0 +1,64 @@
+# Kurs-eksport til Drive-porteføljen (de planlagte Claude-kørsler "Trade agent").
+#
+# Henter daglige kurser for top-50 i Nasdaq-100 + QQQ efter lukketid og committer
+# kurser/nasdaq50.json. Claude-kørslen om morgenen læser filen fra repoet, fordi den
+# selv ikke kan hente kursdata. Offentligt repo, så de planlagte kørsler kan hente filen uden login.
+name: Kurser til Drive-portefølje
+
+on:
+  schedule:
+    - cron: '25 21 * * 1-5'    # efter lukketid i USA (sommer- og vintertid)
+    - cron: '25 22 * * 1-5'
+    - cron: '15 4 * * 2-6'     # reserve, hvis aftenkørslen fejlede eller blev forsinket
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kurser
+  cancel-in-progress: false
+
+jobs:
+  kurser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Installér pakker
+        run: pip install yfinance pandas requests
+
+      - name: Hent kurser (med genforsøg)
+        run: |
+          for n in 1 2 3; do
+            python kurser_export.py && exit 0
+            echo "::warning::Forsøg $n fejlede - prøver igen om 5 minutter"
+            sleep 300
+          done
+          exit 1
+
+      - name: Commit kurser/nasdaq50.json
+        if: always()
+        run: |
+          [ -f kurser/nasdaq50.json ] || exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add kurser/nasdaq50.json
+          if git diff --cached --quiet; then
+            echo "Ingen nye kurser"
+            exit 0
+          fi
+          as_of=$(python -c "import json; print(json.load(open('kurser/nasdaq50.json'))['as_of'])")
+          git commit -m "Kurser til Drive-portefølje (data til $as_of)"
+          for n in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1
