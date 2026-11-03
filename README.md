@@ -5,8 +5,11 @@ Offentlige dagskurser til Nis' Drive-portefølje (paper trading, aldrig rigtige 
 - `kurser/nasdaq50.json` – top-50 i Nasdaq-100 efter markedsværdi + QQQ: 60 dages ujusterede
   OHLCV, RSI(14) (Wilder), højeste luk de forrige 20 dage og gårsdagens volumen. Opdateres af
   `.github/workflows/kurser.yml` efter lukketid i USA (og en reserve om morgenen).
-- `drive_portefolje.py` – fører `trade-agent-portfolio.json` frem dag for dag ud fra kursfilen.
-  Kun standardbiblioteket. Bruges af den planlagte Claude-kørsel "Trade agent (morgen)".
+- `drive_portefolje.py` – fører porteføljen frem dag for dag ud fra kursfilen (kun standardbiblioteket).
+  Workflowet kører det lige efter kurs-eksporten.
+- `portefolje/trade-agent-portfolio.json` – porteføljens tilstand (sandheden). `portefolje/rapport.txt` –
+  rapport fra seneste kørsel med nye handelsdage. Den planlagte Claude-kørsel "Trade agent (morgen)"
+  kopierer filen til Google Drive-mappen "Trade Agent", så dashboardet kan læse den.
 
 ```
 python3 drive_portefolje.py PORTEFØLJE.json kurser/nasdaq50.json UD.json

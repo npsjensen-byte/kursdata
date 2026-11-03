@@ -3,7 +3,7 @@
 # Henter daglige kurser for top-50 i Nasdaq-100 + QQQ efter lukketid og committer
 # kurser/nasdaq50.json. Claude-kørslen om morgenen læser filen fra repoet, fordi den
 # selv ikke kan hente kursdata. Offentligt repo, så de planlagte kørsler kan hente filen uden login.
-name: Kurser til Drive-portefølje
+name: Kurser og portefølje
 
 on:
   schedule:
@@ -44,19 +44,30 @@ jobs:
           done
           exit 1
 
-      - name: Commit kurser/nasdaq50.json
+      - name: Før porteføljen frem
+        id: pf
+        run: |
+          python drive_portefolje.py portefolje/trade-agent-portfolio.json kurser/nasdaq50.json portefolje/ny.json > portefolje/sidste_koersel.txt && rc=0 || rc=$?
+          cat portefolje/sidste_koersel.txt
+          if [ "$rc" -eq 0 ]; then
+            mv portefolje/ny.json portefolje/trade-agent-portfolio.json
+            cp portefolje/sidste_koersel.txt portefolje/rapport.txt
+          elif [ "$rc" -ne 3 ]; then
+            echo "::error::drive_portefolje.py fejlede (exit $rc)"; exit 1
+          fi
+
+      - name: Commit kurser og portefølje
         if: always()
         run: |
-          [ -f kurser/nasdaq50.json ] || exit 0
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add kurser/nasdaq50.json
+          git add kurser/nasdaq50.json portefolje/trade-agent-portfolio.json portefolje/rapport.txt 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "Ingen nye kurser"
+            echo "Intet nyt"
             exit 0
           fi
           as_of=$(python -c "import json; print(json.load(open('kurser/nasdaq50.json'))['as_of'])")
-          git commit -m "Kurser til Drive-portefølje (data til $as_of)"
+          git commit -m "Kurser og portefølje (data til $as_of)"
           for n in 1 2 3; do
             git pull --rebase && git push && exit 0
             sleep 10
