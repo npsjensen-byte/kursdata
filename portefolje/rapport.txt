@@ -1,21 +1,16 @@
-Behandlede handelsdage: 2026-10-30, 2026-11-02  (kursdata til 2026-11-02)
-Rettede history-punkter: 2026-10-28: QQQ 716.55 -> 725.61; 2026-10-29: QQQ 717.11 -> 715.34
+Behandlede handelsdage: 2026-11-03  (kursdata til 2026-11-03)
 
 📊 STATUS
-Marked: ned
+Marked: op
 Position: 0 aktive (ingen)
 
 🎯 HANDLING
-2026-10-30 KØB-SIGNAL REGN (breakout) luk 927.89 - købes ved næste åbning
-2026-10-30 KØB-SIGNAL VRTX (breakout) luk 558.88 - købes ved næste åbning
-2026-11-02 KØB REGN @ 927.22  stop 908.68  mål 964.31
-2026-11-02 KØB VRTX @ 560.88  stop 549.66  mål 583.32
-2026-11-02 SÆLG REGN @ 964.31 (+4.00 %) - kursmål +4%
-2026-11-02 SÆLG VRTX @ 549.66 (-2.00 %) - stop-loss -2%
-2026-11-02 KØB-SIGNAL MAR (breakout) luk 416.30 - købes ved næste åbning
-Venter på køb ved næste åbning: MAR
+2026-11-03 KØB MAR @ 417.40  stop 409.05  mål 434.1
+2026-11-03 SÆLG MAR @ 416.38 (-0.24 %) - RSI > 70 (momentum vender)
+2026-11-03 KØB-SIGNAL SNDK (RSI krydser op gennem 30) luk 1126.52 - købes ved næste åbning
+Venter på køb ved næste åbning: SNDK
 
 📈 RESULTAT
-Dag: +0.40 %   Benchmark: -1.36 % (QQQ)
-Total siden start: +0.40 %   QQQ siden start: -5.36 %
-Edge vs. marked: +5.76 pct.point
+Dag: -0.05 %   Benchmark: +0.62 % (QQQ)
+Total siden start: +0.35 %   QQQ siden start: -4.78 %
+Edge vs. marked: +5.13 pct.point
