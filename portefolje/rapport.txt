@@ -1,16 +1,17 @@
-Behandlede handelsdage: 2026-11-03  (kursdata til 2026-11-03)
+Behandlede handelsdage: 2026-11-04  (kursdata til 2026-11-04)
 
 📊 STATUS
 Marked: op
 Position: 0 aktive (ingen)
 
 🎯 HANDLING
-2026-11-03 KØB MAR @ 417.40  stop 409.05  mål 434.1
-2026-11-03 SÆLG MAR @ 416.38 (-0.24 %) - RSI > 70 (momentum vender)
-2026-11-03 KØB-SIGNAL SNDK (RSI krydser op gennem 30) luk 1126.52 - købes ved næste åbning
-Venter på køb ved næste åbning: SNDK
+2026-11-04 KØB SNDK @ 1079.91  stop 1058.31  mål 1123.11
+2026-11-04 SÆLG SNDK @ 1058.31 (-2.00 %) - stop-loss -2%
+2026-11-04 KØB-SIGNAL ISRG (breakout) luk 482.10 - købes ved næste åbning
+2026-11-04 KØB-SIGNAL MRNA (breakout) luk 258.38 - købes ved næste åbning
+Venter på køb ved næste åbning: ISRG, MRNA
 
 📈 RESULTAT
-Dag: -0.05 %   Benchmark: +0.62 % (QQQ)
-Total siden start: +0.35 %   QQQ siden start: -4.78 %
-Edge vs. marked: +5.13 pct.point
+Dag: -0.40 %   Benchmark: +0.97 % (QQQ)
+Total siden start: -0.05 %   QQQ siden start: -3.85 %
+Edge vs. marked: +3.80 pct.point
