@@ -1,0 +1,54 @@
+# Backtest af regnskabs-blackout (ingen nye køb lige før regnskab).
+# Kører ved push til grenen backtest-regnskab, eller manuelt: Actions -> "Backtest regnskab" -> Run workflow.
+# Rører ikke kursfilen eller porteføljen - skriver kun backtest/regnskab-blackout.md (+ .json).
+name: Backtest regnskab
+
+on:
+  push:
+    branches: [backtest-regnskab]
+    paths: ['backtest/regnskab_blackout.py', '.github/workflows/backtest.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kurser            # samme gruppe som den daglige kørsel, så de ikke pusher samtidig
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Installér pakker
+        run: pip install yfinance pandas requests lxml
+
+      - name: Tjek motoren mod live-handlerne
+        continue-on-error: true   # kursfilen dækker kun 60 dage, så tjekket forældes med tiden
+        run: python backtest/regnskab_blackout.py --valider portefolje/trade-agent-portfolio.json kurser/nasdaq50.json 2026-10-29
+
+      - name: Kør backtest
+        run: python backtest/regnskab_blackout.py
+
+      - name: Gem rapport
+        run: |
+          cat backtest/regnskab-blackout.md >> "$GITHUB_STEP_SUMMARY"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add backtest/regnskab-blackout.md backtest/regnskab-blackout.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Backtest: regnskabs-blackout"
+          for n in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1

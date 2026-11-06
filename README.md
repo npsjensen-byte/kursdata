@@ -17,3 +17,11 @@ python3 drive_portefolje.py PORTEFØLJE.json kurser/nasdaq50.json UD.json
 
 Regler: signal ved lukning (breakout over 20-dages high med stigende volumen, eller RSI krydser
 op gennem 30), køb ved næste åbning, stop -2 %, mål +4 %, salg ved RSI > 70. Maks 5 positioner.
+
+## Backtest: regnskabs-blackout
+
+`backtest/regnskab_blackout.py` tester, om det hjælper at droppe nye køb, når aktien har regnskab
+inden for de næste N handelsdage (5 år, samme regler som ovenfor). Hovedvariant N = 5 og
+beslutningsregel er fastlagt på forhånd. Kører i `.github/workflows/backtest.yml` (push til
+grenen `backtest-regnskab` eller manuelt) og skriver `backtest/regnskab-blackout.md`.
+Ændrer intet i den daglige kørsel.
