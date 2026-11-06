@@ -1,17 +1,19 @@
-Behandlede handelsdage: 2026-11-04  (kursdata til 2026-11-04)
+Behandlede handelsdage: 2026-11-05  (kursdata til 2026-11-05)
 
 📊 STATUS
-Marked: op
+Marked: ned
 Position: 0 aktive (ingen)
 
 🎯 HANDLING
-2026-11-04 KØB SNDK @ 1079.91  stop 1058.31  mål 1123.11
-2026-11-04 SÆLG SNDK @ 1058.31 (-2.00 %) - stop-loss -2%
-2026-11-04 KØB-SIGNAL ISRG (breakout) luk 482.10 - købes ved næste åbning
-2026-11-04 KØB-SIGNAL MRNA (breakout) luk 258.38 - købes ved næste åbning
-Venter på køb ved næste åbning: ISRG, MRNA
+2026-11-05 KØB ISRG @ 482.88  stop 473.22  mål 502.2
+2026-11-05 KØB MRNA @ 258.01  stop 252.85  mål 268.33
+2026-11-05 SÆLG ISRG @ 473.22 (-2.00 %) - stop-loss -2%
+2026-11-05 SÆLG MRNA @ 252.85 (-2.00 %) - stop-loss -2%
+2026-11-05 KØB-SIGNAL PDD (breakout) luk 83.95 - købes ved næste åbning
+2026-11-05 KØB-SIGNAL COST (breakout) luk 1065.59 - købes ved næste åbning
+Venter på køb ved næste åbning: PDD, COST
 
 📈 RESULTAT
-Dag: -0.40 %   Benchmark: +0.97 % (QQQ)
-Total siden start: -0.05 %   QQQ siden start: -3.85 %
-Edge vs. marked: +3.80 pct.point
+Dag: -0.80 %   Benchmark: -6.49 % (QQQ)
+Total siden start: -0.85 %   QQQ siden start: -10.09 %
+Edge vs. marked: +9.24 pct.point
