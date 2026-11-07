@@ -1,19 +1,17 @@
-Behandlede handelsdage: 2026-11-05  (kursdata til 2026-11-05)
+Behandlede handelsdage: 2026-11-06  (kursdata til 2026-11-06)
 
 📊 STATUS
-Marked: ned
-Position: 0 aktive (ingen)
+Marked: op
+Position: 1 aktive (COST +0.80 %)
 
 🎯 HANDLING
-2026-11-05 KØB ISRG @ 482.88  stop 473.22  mål 502.2
-2026-11-05 KØB MRNA @ 258.01  stop 252.85  mål 268.33
-2026-11-05 SÆLG ISRG @ 473.22 (-2.00 %) - stop-loss -2%
-2026-11-05 SÆLG MRNA @ 252.85 (-2.00 %) - stop-loss -2%
-2026-11-05 KØB-SIGNAL PDD (breakout) luk 83.95 - købes ved næste åbning
-2026-11-05 KØB-SIGNAL COST (breakout) luk 1065.59 - købes ved næste åbning
-Venter på køb ved næste åbning: PDD, COST
+2026-11-06 KØB PDD droppet - ingen kurs
+2026-11-06 KØB COST @ 1045.25  stop 1024.35  mål 1087.06
+2026-11-06 KØB-SIGNAL AMD (RSI krydser op gennem 30) luk 449.04 - købes ved næste åbning
+2026-11-06 KØB-SIGNAL LRCX (RSI krydser op gennem 30) luk 200.44 - købes ved næste åbning
+Venter på køb ved næste åbning: AMD, LRCX
 
 📈 RESULTAT
-Dag: -0.80 %   Benchmark: -6.49 % (QQQ)
-Total siden start: -0.85 %   QQQ siden start: -10.09 %
-Edge vs. marked: +9.24 pct.point
+Dag: +0.16 %   Benchmark: +1.40 % (QQQ)
+Total siden start: -0.69 %   QQQ siden start: -8.84 %
+Edge vs. marked: +8.14 pct.point
