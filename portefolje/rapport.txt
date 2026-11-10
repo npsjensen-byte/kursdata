@@ -1,17 +1,19 @@
-Behandlede handelsdage: 2026-11-06  (kursdata til 2026-11-06)
+Behandlede handelsdage: 2026-11-09  (kursdata til 2026-11-09)
 
 📊 STATUS
 Marked: op
-Position: 1 aktive (COST +0.80 %)
+Position: 1 aktive (COST +2.00 %)
 
 🎯 HANDLING
-2026-11-06 KØB PDD droppet - ingen kurs
-2026-11-06 KØB COST @ 1045.25  stop 1024.35  mål 1087.06
-2026-11-06 KØB-SIGNAL AMD (RSI krydser op gennem 30) luk 449.04 - købes ved næste åbning
-2026-11-06 KØB-SIGNAL LRCX (RSI krydser op gennem 30) luk 200.44 - købes ved næste åbning
-Venter på køb ved næste åbning: AMD, LRCX
+2026-11-09 KØB AMD @ 473.39  stop 463.92  mål 492.33
+2026-11-09 KØB LRCX @ 206.50  stop 202.37  mål 214.76
+2026-11-09 SÆLG AMD @ 492.33 (+4.00 %) - kursmål +4%
+2026-11-09 SÆLG LRCX @ 214.76 (+4.00 %) - kursmål +4%
+2026-11-09 KØB-SIGNAL TMUS (breakout) luk 168.71 - købes ved næste åbning
+2026-11-09 KØB-SIGNAL AMZN (breakout) luk 266.93 - købes ved næste åbning
+Venter på køb ved næste åbning: TMUS, AMZN
 
 📈 RESULTAT
-Dag: +0.16 %   Benchmark: +1.40 % (QQQ)
-Total siden start: -0.69 %   QQQ siden start: -8.84 %
-Edge vs. marked: +8.14 pct.point
+Dag: +1.84 %   Benchmark: +3.54 % (QQQ)
+Total siden start: +1.13 %   QQQ siden start: -5.61 %
+Edge vs. marked: +6.74 pct.point
