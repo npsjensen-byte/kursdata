@@ -1,19 +1,15 @@
-Behandlede handelsdage: 2026-11-09  (kursdata til 2026-11-09)
+Behandlede handelsdage: 2026-11-10  (kursdata til 2026-11-10)
 
 📊 STATUS
-Marked: op
-Position: 1 aktive (COST +2.00 %)
+Marked: ned
+Position: 2 aktive (COST +2.00 %, AMZN +1.75 %)
 
 🎯 HANDLING
-2026-11-09 KØB AMD @ 473.39  stop 463.92  mål 492.33
-2026-11-09 KØB LRCX @ 206.50  stop 202.37  mål 214.76
-2026-11-09 SÆLG AMD @ 492.33 (+4.00 %) - kursmål +4%
-2026-11-09 SÆLG LRCX @ 214.76 (+4.00 %) - kursmål +4%
-2026-11-09 KØB-SIGNAL TMUS (breakout) luk 168.71 - købes ved næste åbning
-2026-11-09 KØB-SIGNAL AMZN (breakout) luk 266.93 - købes ved næste åbning
-Venter på køb ved næste åbning: TMUS, AMZN
+2026-11-10 KØB TMUS @ 169.67  stop 166.28  mål 176.46
+2026-11-10 KØB AMZN @ 266.21  stop 260.89  mål 276.86
+2026-11-10 SÆLG TMUS @ 166.28 (-2.00 %) - stop-loss -2%
 
 📈 RESULTAT
-Dag: +1.84 %   Benchmark: +3.54 % (QQQ)
-Total siden start: +1.13 %   QQQ siden start: -5.61 %
-Edge vs. marked: +6.74 pct.point
+Dag: -0.05 %   Benchmark: -0.68 % (QQQ)
+Total siden start: +1.08 %   QQQ siden start: -6.24 %
+Edge vs. marked: +7.33 pct.point
