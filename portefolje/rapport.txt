@@ -1,15 +1,16 @@
-Behandlede handelsdage: 2026-11-10  (kursdata til 2026-11-10)
+Behandlede handelsdage: 2026-11-11  (kursdata til 2026-11-11)
 
 📊 STATUS
-Marked: ned
-Position: 2 aktive (COST +2.00 %, AMZN +1.75 %)
+Marked: op
+Position: 1 aktive (AMZN -0.02 %)
 
 🎯 HANDLING
-2026-11-10 KØB TMUS @ 169.67  stop 166.28  mål 176.46
-2026-11-10 KØB AMZN @ 266.21  stop 260.89  mål 276.86
-2026-11-10 SÆLG TMUS @ 166.28 (-2.00 %) - stop-loss -2%
+2026-11-11 SÆLG COST @ 1087.06 (+4.00 %) - kursmål +4%
+2026-11-11 KØB-SIGNAL COST (breakout) luk 1087.61 - købes ved næste åbning
+2026-11-11 KØB-SIGNAL TMUS (breakout) luk 172.16 - købes ved næste åbning
+Venter på køb ved næste åbning: COST, TMUS
 
 📈 RESULTAT
-Dag: -0.05 %   Benchmark: -0.68 % (QQQ)
-Total siden start: +1.08 %   QQQ siden start: -6.24 %
-Edge vs. marked: +7.33 pct.point
+Dag: +0.04 %   Benchmark: +2.31 % (QQQ)
+Total siden start: +1.12 %   QQQ siden start: -4.07 %
+Edge vs. marked: +5.20 pct.point
