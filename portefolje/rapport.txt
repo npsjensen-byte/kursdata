@@ -1,19 +1,17 @@
-Behandlede handelsdage: 2026-11-12  (kursdata til 2026-11-12)
+Behandlede handelsdage: 2026-11-13  (kursdata til 2026-11-13)
 
 📊 STATUS
 Marked: ned
-Position: 1 aktive (AMZN +0.46 %)
+Position: 1 aktive (AMZN +0.17 %)
 
 🎯 HANDLING
-2026-11-12 KØB COST @ 1096.27  stop 1074.34  mål 1140.12
-2026-11-12 KØB TMUS @ 174.45  stop 170.96  mål 181.43
-2026-11-12 SÆLG COST @ 1092.21 (-0.37 %) - RSI > 70 (momentum vender)
-2026-11-12 SÆLG TMUS @ 170.96 (-2.00 %) - stop-loss -2%
-2026-11-12 KØB-SIGNAL AVGO (breakout) luk 364.36 - købes ved næste åbning
-2026-11-12 KØB-SIGNAL CEG (breakout) luk 282.40 - købes ved næste åbning
-Venter på køb ved næste åbning: AVGO, CEG
+2026-11-13 KØB AVGO @ 356.54  stop 349.41  mål 370.8
+2026-11-13 KØB CEG droppet - ingen kurs
+2026-11-13 SÆLG AVGO @ 349.41 (-2.00 %) - stop-loss -2%
+2026-11-13 KØB-SIGNAL AAPL (breakout) luk 356.27 - købes ved næste åbning
+Venter på køb ved næste åbning: AAPL
 
 📈 RESULTAT
-Dag: -0.38 %   Benchmark: -0.32 % (QQQ)
-Total siden start: +0.74 %   QQQ siden start: -4.38 %
-Edge vs. marked: +5.12 pct.point
+Dag: -0.46 %   Benchmark: -1.20 % (QQQ)
+Total siden start: +0.28 %   QQQ siden start: -5.53 %
+Edge vs. marked: +5.81 pct.point
