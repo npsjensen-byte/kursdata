@@ -1,17 +1,17 @@
-Behandlede handelsdage: 2026-11-13  (kursdata til 2026-11-13)
+Behandlede handelsdage: 2026-11-16  (kursdata til 2026-11-16)
 
 📊 STATUS
 Marked: ned
-Position: 1 aktive (AMZN +0.17 %)
+Position: 1 aktive (AAPL -1.22 %)
 
 🎯 HANDLING
-2026-11-13 KØB AVGO @ 356.54  stop 349.41  mål 370.8
-2026-11-13 KØB CEG droppet - ingen kurs
-2026-11-13 SÆLG AVGO @ 349.41 (-2.00 %) - stop-loss -2%
-2026-11-13 KØB-SIGNAL AAPL (breakout) luk 356.27 - købes ved næste åbning
-Venter på køb ved næste åbning: AAPL
+2026-11-16 KØB AAPL @ 357.13  stop 349.99  mål 371.42
+2026-11-16 SÆLG AMZN @ 260.89 (-2.00 %) - stop-loss -2%
+2026-11-16 KØB-SIGNAL APP (breakout) luk 415.22 - købes ved næste åbning
+2026-11-16 KØB-SIGNAL ADP (breakout) luk 313.43 - købes ved næste åbning
+Venter på køb ved næste åbning: APP, ADP
 
 📈 RESULTAT
-Dag: -0.46 %   Benchmark: -1.20 % (QQQ)
-Total siden start: +0.28 %   QQQ siden start: -5.53 %
-Edge vs. marked: +5.81 pct.point
+Dag: -0.68 %   Benchmark: -2.67 % (QQQ)
+Total siden start: -0.41 %   QQQ siden start: -8.05 %
+Edge vs. marked: +7.65 pct.point
