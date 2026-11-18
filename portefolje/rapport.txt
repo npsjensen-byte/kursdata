@@ -1,17 +1,16 @@
-Behandlede handelsdage: 2026-11-16  (kursdata til 2026-11-16)
+Behandlede handelsdage: 2026-11-17  (kursdata til 2026-11-17)
 
 📊 STATUS
 Marked: ned
-Position: 1 aktive (AAPL -1.22 %)
+Position: 1 aktive (ADP -0.51 %)
 
 🎯 HANDLING
-2026-11-16 KØB AAPL @ 357.13  stop 349.99  mål 371.42
-2026-11-16 SÆLG AMZN @ 260.89 (-2.00 %) - stop-loss -2%
-2026-11-16 KØB-SIGNAL APP (breakout) luk 415.22 - købes ved næste åbning
-2026-11-16 KØB-SIGNAL ADP (breakout) luk 313.43 - købes ved næste åbning
-Venter på køb ved næste åbning: APP, ADP
+2026-11-17 KØB APP @ 412.56  stop 404.31  mål 429.06
+2026-11-17 KØB ADP @ 309.87  stop 303.67  mål 322.26
+2026-11-17 SÆLG AAPL @ 349.99 (-2.00 %) - stop-loss -2%
+2026-11-17 SÆLG APP @ 404.31 (-2.00 %) - stop-loss -2%
 
 📈 RESULTAT
-Dag: -0.68 %   Benchmark: -2.67 % (QQQ)
-Total siden start: -0.41 %   QQQ siden start: -8.05 %
-Edge vs. marked: +7.65 pct.point
+Dag: -0.66 %   Benchmark: -0.73 % (QQQ)
+Total siden start: -1.06 %   QQQ siden start: -8.72 %
+Edge vs. marked: +7.66 pct.point
