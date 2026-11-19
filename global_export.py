@@ -175,8 +175,13 @@ def opdater_enkeltvis(t: str, df: pd.DataFrame, maal: str) -> tuple[pd.DataFrame
         fi = tk.fast_info
         meta = tk.history_metadata or {}
         tid = meta.get('regularMarketTime')
-        dato = (datetime.fromtimestamp(tid, ZoneInfo(meta.get('exchangeTimezoneName') or 'UTC'))
-                .strftime('%Y-%m-%d') if tid else None)
+        tz = meta.get('exchangeTimezoneName') or marked_for(t)[2]
+        if tid is None:
+            dato = None
+        else:
+            ts = pd.Timestamp(tid, unit='s') if isinstance(tid, (int, float)) else pd.Timestamp(tid)
+            ts = ts.tz_localize('UTC') if ts.tzinfo is None else ts
+            dato = ts.tz_convert(tz).strftime('%Y-%m-%d')
         sidst = df.dropna(subset=['Close']).index[-1].strftime('%Y-%m-%d')
         if dato == maal and dato > sidst and fi.get('lastPrice'):
             raekke = pd.DataFrame({'Open': [fi.get('open') or fi['lastPrice']],
