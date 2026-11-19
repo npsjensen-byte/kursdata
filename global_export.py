@@ -151,6 +151,46 @@ def byg(df: pd.DataFrame, tz: str, faerdig: tuple[int, int]) -> tuple[dict | Non
     return {'last': rows[-1][0], 'rows': rows, 'oms20': None if pd.isna(oms) else float(oms)}, None
 
 
+def _uden_tz(df: pd.DataFrame) -> pd.DataFrame:
+    if getattr(df.index, 'tz', None) is not None:
+        df = df.copy()
+        df.index = df.index.tz_localize(None)
+    df.index = pd.to_datetime(df.index.date)
+    return df
+
+
+def opdater_enkeltvis(t: str, df: pd.DataFrame, maal: str) -> tuple[pd.DataFrame, str]:
+    """Yahoo mangler ofte seneste dagsbar for europæiske aktier i samlet download.
+    1) Prøv tickerens egen historik. 2) Ellers byg dagens bar ud fra kursoplysningerne
+    (åbning, høj, lav, seneste kurs og volumen), hvis de er fra måldatoen."""
+    tk = yf.Ticker(t)
+    try:
+        h = _uden_tz(tk.history(period='8mo', interval='1d', auto_adjust=False))
+        h = h[['Open', 'High', 'Low', 'Close', 'Volume']].dropna(subset=['Close'])
+        if not h.empty and h.index[-1].strftime('%Y-%m-%d') >= maal:
+            return h, 'historik'
+    except Exception as e:  # noqa: BLE001
+        print(f'{t}: historik fejlede ({e})', file=sys.stderr)
+    try:
+        fi = tk.fast_info
+        meta = tk.history_metadata or {}
+        tid = meta.get('regularMarketTime')
+        dato = (datetime.fromtimestamp(tid, ZoneInfo(meta.get('exchangeTimezoneName') or 'UTC'))
+                .strftime('%Y-%m-%d') if tid else None)
+        sidst = df.dropna(subset=['Close']).index[-1].strftime('%Y-%m-%d')
+        if dato == maal and dato > sidst and fi.get('lastPrice'):
+            raekke = pd.DataFrame({'Open': [fi.get('open') or fi['lastPrice']],
+                                   'High': [fi.get('dayHigh') or fi['lastPrice']],
+                                   'Low': [fi.get('dayLow') or fi['lastPrice']],
+                                   'Close': [fi['lastPrice']],
+                                   'Volume': [fi.get('lastVolume') or 0]},
+                                  index=pd.to_datetime([dato]))
+            return pd.concat([df.dropna(subset=['Close']), raekke]), 'dagsbar fra kursoplysninger'
+        return df, f'ingen nyere data (Yahoo-tid {dato})'
+    except Exception as e:  # noqa: BLE001
+        return df, f'kursoplysninger fejlede ({e})'
+
+
 def hent_fx(gammel: dict) -> tuple[dict, str]:
     raw = yf.download(list(FX_TICKERS.values()), period='1mo', interval='1d',
                       auto_adjust=False, group_by='ticker', progress=False, threads=True)
@@ -202,15 +242,47 @@ def main() -> int:
 
     raw = yf.download(alle, period='8mo', interval='1d', auto_adjust=False,
                       group_by='ticker', progress=False, threads=True)
-    data, mangler, fejl = {}, [], {}
+    rå, mangler, fejl = {}, [], {}
     for t in alle:
-        marked, valuta, tz, faerdig = marked_for(t)
         try:
-            df = raw[t][['Open', 'High', 'Low', 'Close', 'Volume']]
+            rå[t] = _uden_tz(raw[t][['Open', 'High', 'Low', 'Close', 'Volume']])
         except KeyError:
             mangler.append(t)
+
+    # Seneste dag pr. ticker, og hvilken dag hvert marked burde være nået til
+    # (nyeste dag blandt markedets aktier og dets regionale indeks).
+    def sidste(t: str) -> str:
+        m, _, tz, faerdig = marked_for(t)
+        df = fjern_ufaerdig_dag(rå[t].dropna(subset=['Close']), tz, faerdig)
+        return df.index[-1].strftime('%Y-%m-%d') if len(df) else ''
+    sidst = {t: sidste(t) for t in rå}
+    indeks_for = {'København': '^OMXC25', 'Stockholm': '^OMXC25', 'Oslo': '^OMXC25', 'Helsinki': '^OMXC25',
+                  'USA': 'SPY'}
+    maal = {}
+    for t, d in sidst.items():
+        m = marked_for(t)[0]
+        maal[m] = max(maal.get(m, ''), d)
+    for m in maal:
+        ref = indeks_for.get(m, '^STOXX50E')
+        maal[m] = max(maal[m], sidst.get(ref, ''))
+    efterslaeb = [t for t, d in sidst.items() if t in info and d and d < maal[marked_for(t)[0]]]
+    syntetisk = []
+    if efterslaeb:
+        print(f'{len(efterslaeb)} tickers mangler seneste dag i samlet download - henter enkeltvis')
+        for t in efterslaeb:
+            m = marked_for(t)[0]
+            df, hvordan = opdater_enkeltvis(t, rå[t], maal[m])
+            rå[t] = df
+            if hvordan == 'dagsbar fra kursoplysninger':
+                syntetisk.append(t)
+            print(f'  {t}: {hvordan}')
+
+    data = {}
+    for t in alle:
+        if t not in rå:
             continue
-        b, grund = byg(df, tz, faerdig)
+        marked, valuta, tz, faerdig = marked_for(t)
+        b, grund = byg(rå[t], tz, faerdig)
         if b is None:
             mangler.append(t)
             fejl[t] = grund
@@ -222,6 +294,8 @@ def main() -> int:
             'm': marked, 'c': valuta,
             'oms20_dkk': None if oms is None else round(oms * fx[valuta]),
         })
+        if t in syntetisk:
+            b['synth'] = True
         data[t] = b
 
     andel_mangler = len(mangler) / len(alle)
@@ -254,6 +328,7 @@ def main() -> int:
         'missing': mangler,
         'missing_reason': fejl,
         'stale': stale,
+        'synthetic_last_bar': sorted(syntetisk),
         'tickers': data,
     }
     os.makedirs(os.path.dirname(UD), exist_ok=True)
