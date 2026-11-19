@@ -1,16 +1,13 @@
-Behandlede handelsdage: 2026-11-17  (kursdata til 2026-11-17)
+Behandlede handelsdage: 2026-11-18  (kursdata til 2026-11-18)
 
 📊 STATUS
-Marked: ned
-Position: 1 aktive (ADP -0.51 %)
+Marked: op
+Position: 1 aktive (ADP -1.39 %)
 
 🎯 HANDLING
-2026-11-17 KØB APP @ 412.56  stop 404.31  mål 429.06
-2026-11-17 KØB ADP @ 309.87  stop 303.67  mål 322.26
-2026-11-17 SÆLG AAPL @ 349.99 (-2.00 %) - stop-loss -2%
-2026-11-17 SÆLG APP @ 404.31 (-2.00 %) - stop-loss -2%
+HOLD - intet klart signal
 
 📈 RESULTAT
-Dag: -0.66 %   Benchmark: -0.73 % (QQQ)
-Total siden start: -1.06 %   QQQ siden start: -8.72 %
-Edge vs. marked: +7.66 pct.point
+Dag: -0.18 %   Benchmark: +0.39 % (QQQ)
+Total siden start: -1.24 %   QQQ siden start: -8.36 %
+Edge vs. marked: +7.13 pct.point
