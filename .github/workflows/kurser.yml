@@ -56,12 +56,27 @@ jobs:
             echo "::error::drive_portefolje.py fejlede (exit $rc)"; exit 1
           fi
 
+      # Globalt univers til mobilsiden "Trade Agent Nordnet". Fejler det, kører resten videre
+      # (papirporteføljen bruger kun nasdaq50.json), og gårsdagens global.json bliver liggende.
+      - name: Hent globale kurser (mobilsiden)
+        if: always()
+        continue-on-error: true
+        run: |
+          for n in 1 2; do
+            python global_export.py && exit 0
+            rc=$?
+            [ "$rc" -eq 1 ] && { echo "::warning::global_export: mange tickers mangler (se loggen)"; exit 0; }
+            echo "::warning::global_export forsøg $n fejlede (exit $rc)"
+            sleep 120
+          done
+          exit 1
+
       - name: Commit kurser og portefølje
         if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add kurser/nasdaq50.json portefolje/trade-agent-portfolio.json portefolje/rapport.txt 2>/dev/null || true
+          git add kurser/nasdaq50.json kurser/global.json portefolje/trade-agent-portfolio.json portefolje/rapport.txt 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Intet nyt"
             exit 0

@@ -11,6 +11,12 @@ Offentlige dagskurser til Nis' Drive-portefølje (paper trading, aldrig rigtige 
   rapport fra seneste kørsel med nye handelsdage. Den planlagte Claude-kørsel "Trade agent (morgen)"
   kopierer filen til Google Drive-mappen "Trade Agent", så dashboardet kan læse den.
 
+- `kurser/global.json` – globalt univers til mobilsiden "Trade Agent Nordnet" (ca. 170 aktier):
+  top-50 i Nasdaq-100 + listen i `univers_global.json` (USA, Norden, Europa, Kina/Asien via
+  USA-noterede ADR'er, Nis' egne beholdninger), regionale benchmarks og valutakurser til DKK.
+  40 dages rækker som arrays (kolonner i `cols`), kurser i lokal valuta (`c`, London i GBp).
+  Skrives af `global_export.py`; fejler den, kører papirporteføljen uberørt videre.
+
 ```
 python3 drive_portefolje.py PORTEFØLJE.json kurser/nasdaq50.json UD.json
 ```
