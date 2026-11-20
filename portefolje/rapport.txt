@@ -1,13 +1,15 @@
-Behandlede handelsdage: 2026-11-18  (kursdata til 2026-11-18)
+Behandlede handelsdage: 2026-11-19  (kursdata til 2026-11-19)
 
 📊 STATUS
-Marked: op
-Position: 1 aktive (ADP -1.39 %)
+Marked: ned
+Position: 0 aktive (ingen)
 
 🎯 HANDLING
-HOLD - intet klart signal
+2026-11-19 SÆLG ADP @ 303.67 (-2.00 %) - stop-loss -2%
+2026-11-19 KØB-SIGNAL INTC (RSI krydser op gennem 30) luk 55.72 - købes ved næste åbning
+Venter på køb ved næste åbning: INTC
 
 📈 RESULTAT
-Dag: -0.18 %   Benchmark: +0.39 % (QQQ)
-Total siden start: -1.24 %   QQQ siden start: -8.36 %
-Edge vs. marked: +7.13 pct.point
+Dag: -0.12 %   Benchmark: -2.19 % (QQQ)
+Total siden start: -1.36 %   QQQ siden start: -10.37 %
+Edge vs. marked: +9.01 pct.point
