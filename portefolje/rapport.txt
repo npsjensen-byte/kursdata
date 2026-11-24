@@ -1,14 +1,15 @@
-Behandlede handelsdage: 2026-11-20  (kursdata til 2026-11-20)
+Behandlede handelsdage: 2026-11-23  (kursdata til 2026-11-23)
 
 📊 STATUS
-Marked: ned
+Marked: op
 Position: 0 aktive (ingen)
 
 🎯 HANDLING
-2026-11-20 KØB INTC @ 54.31  stop 53.22  mål 56.48
-2026-11-20 SÆLG INTC @ 53.22 (-2.01 %) - stop-loss -2%
+2026-11-23 KØB-SIGNAL NVDA (RSI krydser op gennem 30) luk 165.05 - købes ved næste åbning
+2026-11-23 KØB-SIGNAL PLTR (RSI krydser op gennem 30) luk 159.36 - købes ved næste åbning
+Venter på køb ved næste åbning: NVDA, PLTR
 
 📈 RESULTAT
-Dag: -0.40 %   Benchmark: -5.67 % (QQQ)
-Total siden start: -1.75 %   QQQ siden start: -15.46 %
-Edge vs. marked: +13.70 pct.point
+Dag: +0.00 %   Benchmark: +7.00 % (QQQ)
+Total siden start: -1.75 %   QQQ siden start: -9.54 %
+Edge vs. marked: +7.79 pct.point
