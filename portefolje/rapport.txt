@@ -1,15 +1,18 @@
-Behandlede handelsdage: 2026-11-23  (kursdata til 2026-11-23)
+Behandlede handelsdage: 2026-11-24  (kursdata til 2026-11-24)
 
 📊 STATUS
-Marked: op
-Position: 0 aktive (ingen)
+Marked: ned
+Position: 1 aktive (PLTR +2.25 %)
 
 🎯 HANDLING
-2026-11-23 KØB-SIGNAL NVDA (RSI krydser op gennem 30) luk 165.05 - købes ved næste åbning
-2026-11-23 KØB-SIGNAL PLTR (RSI krydser op gennem 30) luk 159.36 - købes ved næste åbning
-Venter på køb ved næste åbning: NVDA, PLTR
+2026-11-24 KØB NVDA @ 159.10  stop 155.92  mål 165.46
+2026-11-24 KØB PLTR @ 157.63  stop 154.48  mål 163.94
+2026-11-24 SÆLG NVDA @ 155.92 (-2.00 %) - stop-loss -2%
+2026-11-24 KØB-SIGNAL GILD (breakout) luk 178.29 - købes ved næste åbning
+2026-11-24 KØB-SIGNAL REGN (breakout) luk 987.09 - købes ved næste åbning
+Venter på køb ved næste åbning: GILD, REGN
 
 📈 RESULTAT
-Dag: +0.00 %   Benchmark: +7.00 % (QQQ)
-Total siden start: -1.75 %   QQQ siden start: -9.54 %
-Edge vs. marked: +7.79 pct.point
+Dag: +0.05 %   Benchmark: -1.99 % (QQQ)
+Total siden start: -1.70 %   QQQ siden start: -11.34 %
+Edge vs. marked: +9.63 pct.point
