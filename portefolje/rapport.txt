@@ -1,17 +1,15 @@
-Behandlede handelsdage: 2026-11-25  (kursdata til 2026-11-25)
+Behandlede handelsdage: 2026-11-27  (kursdata til 2026-11-27)
 
 📊 STATUS
-Marked: ned
-Position: 2 aktive (GILD -0.96 %, REGN -0.18 %)
+Marked: op
+Position: 1 aktive (REGN +0.86 %)
 
 🎯 HANDLING
-2026-11-25 KØB GILD @ 178.45  stop 174.88  mål 185.59
-2026-11-25 KØB REGN @ 983.66  stop 963.99  mål 1023.01
-2026-11-25 SÆLG PLTR @ 154.22 (-2.16 %) - stop-loss (gap under stop)
-2026-11-25 KØB-SIGNAL VRTX (breakout) luk 564.12 - købes ved næste åbning
-Venter på køb ved næste åbning: VRTX
+2026-11-27 KØB VRTX @ 517.37  stop 507.02  mål 538.06
+2026-11-27 SÆLG GILD @ 174.67 (-2.12 %) - stop-loss (gap under stop)
+2026-11-27 SÆLG VRTX @ 507.02 (-2.00 %) - stop-loss -2%
 
 📈 RESULTAT
-Dag: -1.11 %   Benchmark: -0.65 % (QQQ)
-Total siden start: -2.79 %   QQQ siden start: -11.92 %
-Edge vs. marked: +9.12 pct.point
+Dag: -0.42 %   Benchmark: +2.69 % (QQQ)
+Total siden start: -3.21 %   QQQ siden start: -9.55 %
+Edge vs. marked: +6.34 pct.point
